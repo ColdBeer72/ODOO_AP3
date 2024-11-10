@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from pytz import timezone, UTC
+from pytz import timezone, UTC, all_timezones
 from datetime import datetime
 
 class ResPartner(models.Model):
@@ -13,7 +13,7 @@ class ResPartner(models.Model):
     age = fields.Integer(string='Edad', compute='_compute_age', store=True)
 
     def _tz_get(self):
-        return [(tz, tz) for tz in timezone._tzinfo_cache]
+        return [(tz, tz) for tz in all_timezones]
 
     @api.depends('birthdate')
     def _compute_age(self):

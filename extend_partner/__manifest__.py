@@ -12,7 +12,7 @@
     'depends': ['base'],
     'data': [
         'views/res_partner_view.xml',
-        'views/birthday_view.xml',
+        'views/birthday_view.xml'
     ],
     'controllers': [
         'controllers/main.py',
