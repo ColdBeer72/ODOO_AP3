@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet/group" position="inside">
                 <group string="Información adicional">
-                    <field name="birthdate"/>
-                    <field name="tz"/>
+                    <field name="birthdate" help="Ingrese la fecha de nacimiento del contacto."/>
+                    <field name="tz" help="Seleccione la zona horaria del contacto. Esto permite calcular correctamente los cumpleaños según la hora local del contacto."/>
                     <field name="age" readonly="1"/>
                 </group>
             </xpath>

@@ -13,11 +13,12 @@ class ResPartner(models.Model):
     age = fields.Integer(string='Edad', compute='_compute_age', store=True)
 
     def _tz_get(self):
+        """Retorna una lista de zonas horarias disponibles para el contacto."""
         return [(tz, tz) for tz in all_timezones]
 
     @api.depends('birthdate')
     def _compute_age(self):
-        """Calcula la edad en función de la fecha de nacimiento"""
+        """Calcula la edad del contacto en función de la fecha de nacimiento"""
         today = fields.Date.today()
         for partner in self:
             if partner.birthdate:
