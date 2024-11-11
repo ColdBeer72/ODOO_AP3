@@ -3,7 +3,7 @@
     <record id="action_birthday_today" model="ir.actions.act_window">
         <field name="name">Cumpleaños Hoy</field>
         <field name="res_model">res.partner</field>
-        <field name="view_type">form</field>
+        <!-- <field name="view_type">form</field> -->
         <field name="view_mode">tree,form</field>
         <field name="domain">[('id', 'in', self.env['res.partner'].get_today_birthdays())]</field>
     </record>
@@ -13,3 +13,4 @@
               parent="base.menu_custom"
               action="action_birthday_today"/>
 </odoo>
+
